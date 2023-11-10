@@ -1,0 +1,14 @@
+ <div class="body">
+<div class="login">
+       <h3>Welcome to</h3>
+    <img src="assets/logo2.png" class="img" alt="">
+  <form class="login-form" (ngSubmit)="login()" #loginForm="ngForm">
+        
+        <input type="text" placeholder="Enter email " id="email" name="email" [(ngModel)]="user.email">
+        <input type="text" placeholder="Enter mac address" id="mac" name="mac" [(ngModel)]="user.mac">
+
+        <button type="submit" >LOGIN</button>
+
+    </form>
+</div>
+</div>  
