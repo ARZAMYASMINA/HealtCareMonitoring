@@ -5,7 +5,7 @@ import json
 from datetime import datetime
 
 def send_heartbeat(mac):
-    url = "http://16.171.143.229:7777/addHeartbeatClient"
+    url = "http://89.116.236.217:8080/mibandbackend/addHeartbeatClient"
     current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
     data = {
         "mac": mac,
@@ -31,7 +31,7 @@ def send_heartbeat(mac):
 
 while True:
     # Récupérer la liste des clients depuis votre API
-    clients_url = "http://16.171.143.229:7777/listClients"
+    clients_url = "http://89.116.236.217:8080/mibandbackend/listClients"
     response = requests.get(clients_url)
     
     if response.status_code == 200:

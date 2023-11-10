@@ -6,7 +6,7 @@ import { Observable, mergeMap, of } from 'rxjs';
   providedIn: 'root'
 })
 export class HeartbeatService {
-  private apiUrl = 'http://89.116.236.217:7777';
+  private  apiUrl = "http://89.116.236.217:8080/mibandbackend";
 
   constructor(private http: HttpClient) { }
 
