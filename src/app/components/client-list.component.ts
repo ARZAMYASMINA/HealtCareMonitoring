@@ -47,7 +47,7 @@ export class ClientListComponent implements OnInit {
   }
 
   getPageNumbers(): number[] {
-    const pageCount = Math.ceil(this.clients.length / this.tableSize);
+    const pageCount = Math.ceil(this.filteredClients.length / this.tableSize);
     return Array(pageCount).fill(0).map((x, i) => i + 1);
   }
   //********end pagination********* //
