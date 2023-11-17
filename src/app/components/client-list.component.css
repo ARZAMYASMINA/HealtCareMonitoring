@@ -1,7 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Optional: Set a background color for the entire page */
+}
+
 .container {
   margin: 20px auto;
   max-width: 800px;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff; /* Optional: Set a background color for the container */
+  padding: 20px; /* Optional: Add padding for better readability */
+  border-radius: 10px; /* Optional: Add border radius for a rounded appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -9,8 +25,22 @@ h2 {
   margin-bottom: 20px;
 }
 
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
 .table {
-  width: 80%;
+  width: 100%; /* Use full width of the container */
   border-collapse: collapse;
   border-radius: 10px;
   overflow: hidden;
@@ -85,9 +115,10 @@ h2 {
 
 .btn-add-profile {
   position: absolute;
-  top: -30px;
+  top: 0; /* Adjust the top position based on your design */
   right: 0;
   margin-top: 20px;
+  margin-right: 20px; /* Adjust the right margin based on your design */
   background-color: #007bff;
   color: #fff;
 }
@@ -134,4 +165,15 @@ h2 {
 
 .page-link:hover {
   background-color: #e9ecef;
+}
+
+/* Styles for the search results (optional) */
+.search-results {
+  margin-top: 10px; /* Space above search results */
+}
+
+/* Optional: Style for highlighting search matches */
+.highlight {
+  background-color: #ffff99; /* Highlight color */
+  font-weight: bold;
 }

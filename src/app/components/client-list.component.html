@@ -1,17 +1,22 @@
 <div class="container">
   <h2>List of Patients</h2>
+  <!-- Search bar with styles -->
+  <div class="search-bar">
+    <input (input)="searchClient()" [(ngModel)]="SearchText" placeholder="Search..." type="text" class="search-input form-control mt-3 mb-3">
+    <!-- Add a search button here if necessary -->
+  </div>
   <table class="table">
+    <!-- Table headers -->
     <thead>
-
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Actions</th>
       </tr>
-
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients | slice:(page-1)*tableSize:page*tableSize; let i = index">
+      <!-- Table rows with ngFor -->
+      <tr *ngFor="let client of filteredClients | slice:(page-1)*tableSize:page*tableSize; let i = index">
         <td>
           <a [routerLink]="['/def/client', client.id]" (click)="setClientId(client.id)" class="client-link">{{ client.nom }}</a>
         </td>
@@ -25,8 +30,10 @@
       </tr>
     </tbody>
   </table>
+  <!-- Pagination section -->
   <div class="d-flex justify-content-center">
     <ul class="pagination">
+      <!-- Pagination controls -->
       <li class="page-item" [ngClass]="{ 'disabled': page === 1 }">
         <a class="page-link" (click)="onPageChange(page - 1)">Previous</a>
       </li>
@@ -38,7 +45,8 @@
       </li>
     </ul>
   </div>
-  <div>
+  <!-- Add Patient button -->
+  <div class="text-center">
     <button (click)="AjouterClient()" class="btn btn-add-profile">Add Patient</button>
   </div>
 </div>

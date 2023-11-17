@@ -15,6 +15,9 @@ export class ClientListComponent implements OnInit {
   client: Client = new Client();
   page: number = 1;
   tableSize: number = 7;
+  SearchText: string = ''; // Propriété pour stocker le texte de recherche
+  filteredClients: any[] = [];
+
 
   constructor(
     private clientService: ClientService,
@@ -29,6 +32,9 @@ export class ClientListComponent implements OnInit {
     this.clientService.getClients().subscribe(
       (response: any) => {
         this.clients = response as Client[];
+  
+        // Initialise filteredClients avec la liste complète des clients
+        this.filteredClients = this.clients.slice();
       },
       (error) => {
         console.log('Error retrieving clients:', error);
@@ -90,4 +96,15 @@ export class ClientListComponent implements OnInit {
       verticalPosition: 'top'
     });
   }
+  searchClient() {
+    // Si le texte de recherche est vide, afficher tous les clients
+  if (this.SearchText.trim() === '') {
+    this.filteredClients = this.clients.slice();
+  } else {
+    // Sinon, filtre les clients en fonction du texte de recherche
+    this.filteredClients = this.clients.filter(client =>
+      client.nom.toLowerCase().includes(this.SearchText.toLowerCase()) ||
+      client.prenom.toLowerCase().includes(this.SearchText.toLowerCase())
+    );
+  }}
 }
