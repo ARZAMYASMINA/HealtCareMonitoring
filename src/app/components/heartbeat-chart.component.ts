@@ -74,8 +74,8 @@ export class HeartbeatChartComponent implements OnInit {
   
         const labels = sortedResponse.map((heartbeat: any) =>
           heartbeat.date_prelevement.split(' ')[1]
-        ).reverse();
-        const data = sortedResponse.map((heartbeat: any) => heartbeat.data1).reverse();
+        );
+        const data = sortedResponse.map((heartbeat: any) => heartbeat.data1);
   
         // Clear previous chart data
         if (this.chart) {
@@ -145,8 +145,8 @@ export class HeartbeatChartComponent implements OnInit {
   
         const labels = sortedResponse.map((heartbeat: any) =>
           heartbeat.date_prelevement.split(' ')[1]
-        ).reverse();
-        const data = sortedResponse.map((heartbeat: any) => heartbeat.data1).reverse();
+        );
+        const data = sortedResponse.map((heartbeat: any) => heartbeat.data1);
   
         // Update the chart with new data
         this.ngZone.run(() => {
